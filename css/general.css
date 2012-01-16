@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+	width:960 px;
+	background-color: #FFF;
+}
+
+
+body {
+	padding-top: 10 px;
+	padding-right: 2em;
+	background-color: #FF9;
+	width: 40%;
+	margin: auto;
+}
+
+
+.button,
+.button:link,
+.button:visited {
+	display:inline-block;
+	padding: 1em;
+	position:relative;
+	background-color: #36c;
+	background-image: -moz-linear-gradient(#58e,#25b);
+	border-radius: 6px;
+	border: 1px solid #036;
+	border-bottom-color: #69c;
+	color: #fff;
+	text-decoration:none;
+	text-shadow: -1px -1px 0 rgba(0,51,102,0.6);
+	box-shadow: 0 5px 0 #036;
+		
+}
+.button:active {
+	top: 2px;
+	background-image: -moz-linear-gradient(#25b,#58e);
+	box-shadow:none;
+	border-bottom-color: #036;
+}
+.button:hover {
+	background-image: -moz-linear-gradient(#25b,#58e);
+}
+.button,
+.calculator,
+.answer, 
+.taxes {
+	padding: 3 em;
+	border: 3px solid #333;
+	box-shadow: 0 0 25px rgba(102,102,0,.5);
+}
+
+.calculator p,
+.input1,
+.input2,
+.answer,
+.taxes, 
+.operator {
+	padding: 1em;
+}
+
+

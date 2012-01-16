@@ -13,62 +13,62 @@ var_dump($_POST);
 <head>
 <meta charset="utf-8">
 <title>Tax Calculator</title>
+<link href="css/general.css" rel="stylesheet">
+
 </head>
 
 <body>
 
 <form action="index.php" method="post">
-	<div>
+	<div class = 'calculator'>
+	<p>Enter a number in each box and select a mathematical operator</p>
+	<div class = 'input1'>
 		<label for="num1"> Number 1</label>
 		<input type="number" id="num1" name="num1" maxlength="5">
-		
-	<label for="operator">Operator</label>
+	</div> <!-- end input 1 -->
+	<div class = 'operator'>
+	<label for="operator">Operator  </label>
 	<select id= id="operator" name="operator">
 		<option value ="a">+ Addition</option>
 		<option value ="s">- Subtraction</option>
 		<option value ="m">* Multiplication</option>
 		<option value ="d">/ Division</option>
 	</select>
-		
-		
+	</div><!-- end operator -->
+	<div class = 'input2'>
 		<label for="num2"> Number 2</label>
 		<input type="number" id="num2" name="num2" maxlength="5">
 		<br>
-	</div>
-	<div>
+	</div><!-- end input 2 -->
+	</div><!-- end calculator -->
 	<br>
+	<div class = 'button'>
 		<button type="calculate">Please press this button to calculate the new number</button>
-	</div>
+	</div><!-- end button -->
 	<br>
 
-	
-<!--	string number_format ( float $number , int $decimals = 0 , string $dec_point = '.' , string $thousands_sep = ',' )
-	
-// english notation without thousands separator
-$english_format_number = number_format($number, 2, '.', ',');
-// 1234.57
--->	
 </form>
 
 <?php if (!empty($_POST['num1']) && !empty($_POST['num2'])) : ?>
-	
+	<div class = 'answer'>
 	<?php if ($_POST['operator'] == "a") : ?>
 		<?php $ans = $_POST['num1'] + $_POST['num2']; ?>
-		<p>The mathamatical answer for <?php echo $_POST['num1']; ?> added to <?php echo $_POST['num2']; ?> is <?php echo number_format($ans, 2); ?></p>
+		<p>The mathematical answer for <?php echo $_POST['num1']; ?> added to <?php echo $_POST['num2']; ?> is <?php echo number_format($ans, 0); ?></p>
 	<?php elseif ($_POST['operator'] == "s") : ?>
 		<?php $ans = $_POST['num1'] - $_POST['num2']; ?>
-		<p>The mathamatical answer for <?php echo $_POST['num2']; ?> subtracted from <?php echo $_POST['num1']; ?> is <?php echo number_format($ans, 2); ?></p>
+		<p>The mathematical answer for <?php echo $_POST['num2']; ?> subtracted from <?php echo $_POST['num1']; ?> is <?php echo number_format($ans, 0); ?></p>
 	<?php elseif ($_POST['operator'] == "m") : ?>
 		<?php $ans = $_POST['num1'] * $_POST['num2']; ?>
-	<p>The mathamatical answer for <?php echo $_POST['num1']; ?> multiplied by <?php echo $_POST['num2']; ?> is <?php echo number_format($ans, 2); ?></p>
+	<p>The mathematical answer for <?php echo $_POST['num1']; ?> multiplied by <?php echo $_POST['num2']; ?> is <?php echo number_format($ans, 0); ?></p>
 	<?php elseif ($_POST['operator'] == "d") : ?>
 		<?php $ans = $_POST['num1'] / $_POST['num2']; ?>
-		<p>The mathamatical answer for <?php echo $_POST['num1']; ?> divided by <?php echo $_POST['num2']; ?> is <?php echo number_format($ans, 2); ?></p>
+		<p>The mathematical answer for <?php echo $_POST['num1']; ?> divided by <?php echo $_POST['num2']; ?> is <?php echo number_format($ans, 0); ?></p>
 	<?php endif; ?>
-
-	<p>Taxes are $ <?php //echo($ans * .13); ?></p>;
-	<p>Taxes are $ <?php echo number_format(($ans * .13), 2); ?></p>;
-	
+	</div><!-- end answer -->
+	<br>
+	<div class = 'taxes'>
+	<p>Taxes are $ <?php echo number_format(($ans * .13), 2); ?></p>
+	</div><!-- end taxes -->	
 
 <?php endif; ?>
 
