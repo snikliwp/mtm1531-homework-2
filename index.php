@@ -2,9 +2,9 @@
 
 // This will make error messages visible on edumedia
 // temporary and should be deleted when code is debugged.
-error_reporting(-1);
-ini_set('display_errors', 'on');
-var_dump($_POST);
+//error_reporting(-1);
+//ini_set('display_errors', 'on');
+//var_dump($_POST);
 
 ?>
 
@@ -23,11 +23,11 @@ var_dump($_POST);
 	<div class = 'calculator'>
 	<p>Enter a number in each box and select a mathematical operator</p>
 	<div class = 'input1'>
-		<label for="num1"> Number 1</label>
-		<input type="number" id="num1" name="num1" maxlength="5">
+		<label for="num1"> Number 1:</label>
+		<input type="number" id="num1" name="num1" maxlength="10">
 	</div> <!-- end input 1 -->
 	<div class = 'operator'>
-	<label for="operator">Operator  </label>
+	<label for="operator">Operator:&nbsp;&nbsp;</label>
 	<select id= id="operator" name="operator">
 		<option value ="a">+ Addition</option>
 		<option value ="s">- Subtraction</option>
@@ -36,8 +36,8 @@ var_dump($_POST);
 	</select>
 	</div><!-- end operator -->
 	<div class = 'input2'>
-		<label for="num2"> Number 2</label>
-		<input type="number" id="num2" name="num2" maxlength="5">
+		<label for="num2"> Number 2:</label>
+		<input type="number" id="num2" name="num2" maxlength="10">
 		<br>
 	</div><!-- end input 2 -->
 	</div><!-- end calculator -->
@@ -45,6 +45,7 @@ var_dump($_POST);
 	<div class = 'button'>
 		<button type="calculate">Please press this button to calculate the new number</button>
 	</div><!-- end button -->
+	<br>
 	<br>
 
 </form>
